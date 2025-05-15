@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'Valentine';
+  src: url(./Valentine.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'ComicRelief';
+  src: url(./ComicRelief-Regular.ttf) format('truetype');
+}
+
+::selection {
+  color: white;
+  background-color: #ff3366;
+}
+
+.mobile-container {
+  display: none;
+}
+
+body {
+    margin: 50px 20%;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+  }
+
+  h1, h2, h3, p {
+    margin: 0;
+    color: rgb(53, 53, 53);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .time-together, .content, .music, .game, .warning {
+    z-index: 1;
+    border: 1px solid rgb(234, 234, 234);
+    box-shadow: 0 0 10px 2px rgb(242, 242, 242);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+  }
+
+  .time-together {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .time-together .title {
+    font-family: 'ComicRelief';
+  }
+
+  .time-together .time {
+    font-family: 'ComicRelief';
+    font-weight: 300;
+    color: #ff3366;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .content h1 {
+    font-family: 'Valentine';
+    font-size: 60px;
+    font-weight: 300;
+  }
+
+  .content p {
+    font-family: 'ComicRelief';
+    font-size: 16px;
+  }
+
+  .music {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .music h1 {
+    font-family: 'Valentine';
+    font-size: 60px;
+    font-weight: 300;
+  }
+
+  .game {
+    position: relative;
+  }
+
+  .game h1 {
+    font-family: 'Valentine';
+    font-size: 60px;
+    font-weight: 300;
+  }
+
+  .game p {
+    font-family: 'ComicRelief';
+    font-size: 16px;
+  }
+
+  .game .buttons {
+    display: flex;
+    position: relative;
+    height: 50vh;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .game .buttons button {
+    position: absolute;
+    padding: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff3366;
+    font-family: 'ComicRelief';
+    font-size: 15px;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.366);
+  }
+
+  .game .buttons button:hover {
+    background-color: #c6244c;
+  }
+
+  .game .result {
+    font-family: 'ComicRelief';
+    box-shadow: 0 0 10px 2px #ffe9ef;
+    padding: 10px;
+    border-radius: 6px;
+    display: none; /* standaard verborgen */
+    color: #ff3366;
+  } 
+
+/* Beginpositie naast elkaar */
+#button1 {
+  left: 32%;
+}
+
+#button2 {
+  left: 52%;
+}
+
+
+  .hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .heart-icon {
+    color: #ff3366;
+    position: absolute;
+    bottom: -20px;
+    animation: float 4s linear forwards;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+
+@media screen and (max-width: 1000px) {
+    .body {
+      display: none;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 50px;
+    }
+
+    .time-together {
+      text-align: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mobile-container {
+      margin: 0 auto;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .warning {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    .warning img {
+      width: 100px;
+      margin: 0 auto;
+    }
+
+    .warning h1, p {
+      text-align: center ;
+    }
+
+    .warning h1 {
+      font-family: 'Valentine';
+      font-size: 60px;
+      font-weight: 300;
+    }
+
+    .warning p {
+      font-family: 'ComicRelief';
+    }
+}
+  
